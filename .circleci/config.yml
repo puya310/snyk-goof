@@ -13,7 +13,8 @@ jobs:
       # replace with your preferred image
       - image: cimg/base:stable
     steps:
-      - snyk/scan
+      - snyk/scan:
+          token-variable: API_TOKEN
 workflows:
   example-workflow:
     jobs:
