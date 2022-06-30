@@ -46,6 +46,7 @@
     "st": "0.2.4",
     "stream-buffers": "^3.0.1",
     "tap": "^5.7.0",
+    "morgan": "~1.6.1",
     "snyk": "^1.290.2"
   },
   "devDependencies": {
