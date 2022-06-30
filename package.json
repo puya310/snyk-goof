@@ -47,6 +47,7 @@
     "stream-buffers": "^3.0.1",
     "tap": "^5.7.0",
     "snyk": "^1.290.2"
+    "log4js": "^0.6.36"
   },
   "devDependencies": {
     "browserify": "^13.1.1"
