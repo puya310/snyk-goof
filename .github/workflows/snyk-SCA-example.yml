@@ -10,4 +10,9 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: --severity-threshold=high --json | snyk-to-html -o ./results.html
+          args: --severity-threshold=high --json | snyk-to-html -o ./results.html|
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.0
+        with: 
+          name: test1
+          path: |
