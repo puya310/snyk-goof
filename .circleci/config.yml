@@ -4,16 +4,28 @@ version: 2.1
 
 
 orbs:
+  node: circleci/node@1.1.6
   snyk: snyk/snyk@1.1.2
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   build:
     docker:
-      - image: 'cimg/node:lts'
+      - image: circleci/node
     steps:
       - checkout
-      - run: npm ci
+      - run:
+          name: update npm
+          command: 'sudo npm install -g npm@latest'
+      - run:
+          name: install snyk 
+          command: 'sudo npm install -g snyk' 
+      - run:
+          name: snyk auth 
+          command: snyk auth $API_TOKEN
+      - run:
+          name: snyk monitor 
+          command: snyk monitor 
       - snyk/scan:
-          token_variable API_TOKEN
+          severity-threshold: high
 workflows: null
