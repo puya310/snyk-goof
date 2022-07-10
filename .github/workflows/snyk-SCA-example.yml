@@ -6,6 +6,10 @@ jobs:
     steps:
       - name: mdkrid
         run: mkdir downloads 
+        
+      - name: install snyk to html
+        run: npm install snyk-to-html -g
+        
       - uses: actions/checkout@master
       - name: Run Snyk Code Test for High Sev Vulns
         uses: snyk/actions/node@master
