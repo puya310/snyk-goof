@@ -4,13 +4,16 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout code
+        uses: actions/checkout@master
+        
       - name: mdkrid
         run: mkdir downloads 
         
       - name: install snyk to html
         run: npm install snyk-to-html -g
         
-      - uses: actions/checkout@master
+   
       - name: Run Snyk Code Test for High Sev Vulns
         uses: snyk/actions/node@master
         env:
