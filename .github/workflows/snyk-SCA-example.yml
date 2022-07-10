@@ -4,11 +4,14 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
+      - name: mdkri 
+      - run: mkdir downloads 
+    
       - uses: actions/checkout@master
       - name: Run Snyk Code Test for High Sev Vulns
         uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          command: monitor 
+          command: test 
           args: --severity-threshold=high
