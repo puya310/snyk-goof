@@ -14,7 +14,8 @@ jobs:
         run: 
           npm install snyk -g 
           npm install snyk-to-html -g
-          snyk auth ${secrets.SNYK_TOKEN}
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
           
       - name: run Snyk
         run: snyk test 
