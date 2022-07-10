@@ -4,9 +4,6 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - name: mdkri 
-      - run: mkdir downloads 
-    
       - uses: actions/checkout@master
       - name: Run Snyk Code Test for High Sev Vulns
         uses: snyk/actions/node@master
@@ -15,3 +12,5 @@ jobs:
         with:
           command: test 
           args: --severity-threshold=high
+      - name: mdkrid
+      - run: mkdir downloads 
