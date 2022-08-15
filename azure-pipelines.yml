@@ -1,0 +1,28 @@
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  # install & prepare snyk and snyk-to-html
+- script: |
+    npm install
+    npm install -g snyk snyk-to-html
+    snyk auth $(SNYK_TOKEN)
+  displayName: 'snyk and snyk-to-html install & auth'
+
+  # snyk code test , output results to results.html
+- script: |
+    snyk code test --json | snyk-to-html -o results.html 
+  continueOnError: true
+  displayName: 'snyk code to html'
+
+#publish/upload artifact
+- task: PublishHtmlReport@1
+  inputs:
+    reportDir: '$(System.DefaultWorkingDirectory)/results.html'
+
+- publish: $(System.DefaultWorkingDirectory)/results.html
+  artifact: Results.html
+  displayName: 'publish result as artifact'
