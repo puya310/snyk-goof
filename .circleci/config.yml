@@ -18,7 +18,7 @@ jobs: # a collection of steps
           command: 'sudo npm install -g snyk'   
       - run:
           name: install snyk-to-html
-          command: 'sude npm install snyk-to-html -g'   
+          command: 'sudo npm install snyk-to-html -g'   
       - run: # run snyk auth - authenticate snyk use environment variables to add token
           name: snyk auth
           command: snyk auth $API_TOKEN
