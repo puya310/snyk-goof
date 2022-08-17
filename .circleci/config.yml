@@ -25,7 +25,7 @@ jobs: # a collection of steps
      
       - run: # run snyk test - run snyk test
           name: snyk code test
-          command: snyk code test --json | snyk-to-html -o SAST_results.html 
+          command: snyk code test --json | snyk-to-html -o SAST_results.html || true
 
       - run: # run snyk test - run snyk test
           name: snyk SCA test
