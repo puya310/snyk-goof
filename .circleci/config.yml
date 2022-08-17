@@ -37,3 +37,8 @@ jobs: # a collection of steps
       - store_artifacts:
           path: SAST_results.html
           destination: SAST_results.html
+
+#     - run:
+#          name: snyk monitor
+#          command: snyk monitor 
+
