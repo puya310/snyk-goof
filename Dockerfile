@@ -1,4 +1,4 @@
-FROM node:16.1.0
+FROM node:16.17.1
 
 RUN mkdir /usr/src/goof
 RUN mkdir /tmp/extracted_files
