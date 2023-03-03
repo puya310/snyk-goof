@@ -11,7 +11,12 @@ steps:
     npm install -g snyk snyk-to-html
     snyk auth $(SNYK_TOKEN)
   displayName: 'snyk and snyk-to-html install & auth'
-
+- task: SnykSecurityScan@1
+  inputs:
+    serviceConnectionEndpoint: 'snyyk'
+    testType: 'app'
+    monitorWhen: 'always'
+    failOnIssues: true
   # snyk code test , output results to results.html
 - script: |
     snyk code test --json | snyk-to-html -o results.html 
