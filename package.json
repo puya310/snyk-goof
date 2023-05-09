@@ -47,7 +47,7 @@
     "tap": "^5.7.0",
     "tinymce": "5.3.0",
     "@snyk/nodejs-runtime-agent": "^1.31.0",
-    "snyk": "^1.290.2"
+    "snyk": "^1.685.0"
     
   },
   "devDependencies": {
