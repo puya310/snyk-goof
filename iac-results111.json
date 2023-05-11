@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "isPrivate": true,
+    "isLicensesEnabled": false,
+    "ignoreSettings": {
+      "adminOnly": false,
+      "reasonRequired": false,
+      "disregardFilesystemIgnores": false
+    },
+    "org": "demo-org-c0z",
+    "orgPublicId": "28a25d20-bb8b-42c9-be21-3815eb36930d",
+    "policy": ""
+  },
+  "filesystemPolicy": false,
+  "vulnerabilities": [],
+  "dependencyCount": 0,
+  "licensesPolicy": null,
+  "ignoreSettings": null,
+  "targetFile": "big_data.tf",
+  "projectName": "snyk-goof",
+  "org": "demo-org-c0z",
+  "policy": "",
+  "isPrivate": true,
+  "targetFilePath": "/Users/puyarajabian/Documents/apps/snyk-goof/big_data.tf",
+  "packageManager": "terraformconfig",
+  "path": "/Users/puyarajabian/Documents/apps/snyk-goof",
+  "projectType": "terraformconfig",
+  "ok": false,
+  "infrastructureAsCodeIssues": [
+    {
+      "id": "SNYK-CC-TF-242",
+      "title": "Public IP assigned to SQL database instance",
+      "severity": "high",
+      "isIgnored": false,
+      "subType": "Cloud SQL",
+      "documentation": "https://snyk.io/security-rules/SNYK-CC-TF-242",
+      "isGeneratedByCustomRule": false,
+      "issue": "Public IP will be assigned to the SQL database",
+      "impact": "Database can be accessed remotely over public Internet",
+      "resolve": "Set `settings.ip_configuration.ipv4_enabled` attribute to `false`",
+      "lineNumber": 9,
+      "iacDescription": {
+        "issue": "Public IP will be assigned to the SQL database",
+        "impact": "Database can be accessed remotely over public Internet",
+        "resolve": "Set `settings.ip_configuration.ipv4_enabled` attribute to `false`"
+      },
+      "publicId": "SNYK-CC-TF-242",
+      "msg": "resource.google_sql_database_instance[master_instance].settings.ip_configuration.ipv4_enabled",
+      "references": [
+        "CIS Google Cloud Platform Foundation v1.1.0 - 6.6 Ensure that Cloud SQL database instances do not have public IPs",
+        "https://cloud.google.com/sql/docs/mysql/configure-private-ip",
+        "https://cloud.google.com/sql/docs/sqlserver/configure-ip"
+      ],
+      "path": [
+        "resource",
+        "google_sql_database_instance[master_instance]",
+        "settings",
+        "ip_configuration",
+        "ipv4_enabled"
+      ],
+      "compliance": []
+    },
+    {
+      "id": "SNYK-CC-TF-236",
+      "title": "BigQuery dataset is publicly accessible",
+      "severity": "high",
+      "isIgnored": false,
+      "subType": "BigQuery",
+      "documentation": "https://snyk.io/security-rules/SNYK-CC-TF-236",
+      "isGeneratedByCustomRule": false,
+      "issue": "BigQuery dataset is publicly accessible",
+      "impact": "Potentially anyone can access data in the dataset",
+      "resolve": "Remove `allAuthenticatedUsers` and `allUsers` values from `access.special_group` attribute",
+      "lineNumber": 21,
+      "iacDescription": {
+        "issue": "BigQuery dataset is publicly accessible",
+        "impact": "Potentially anyone can access data in the dataset",
+        "resolve": "Remove `allAuthenticatedUsers` and `allUsers` values from `access.special_group` attribute"
+      },
+      "publicId": "SNYK-CC-TF-236",
+      "msg": "resource.google_bigquery_dataset[dataset].access[0].special_group",
+      "references": [
+        "CIS Google Cloud Platform Foundation v1.1.0 - 7.1 Ensure that BigQuery datasets are not anonymously or publicly accessible",
+        "https://cloud.google.com/bigquery/public-data"
+      ],
+      "path": [
+        "resource",
+        "google_bigquery_dataset[dataset]",
+        "access[0]",
+        "special_group"
+      ],
+      "compliance": []
+    },
+    {
+      "id": "SNYK-CC-TF-235",
+      "title": "Cloud SQL instance is publicly accessible",
+      "severity": "high",
+      "isIgnored": false,
+      "subType": "Cloud SQL",
+      "documentation": "https://snyk.io/security-rules/SNYK-CC-TF-235",
+      "isGeneratedByCustomRule": false,
+      "issue": "Cloud SQL database instance allows public access",
+      "impact": "Potentially anyone can establish network connectivity to the database instance",
+      "resolve": "Set `settings.ip_configuration.authorized_networks` attribute to specific value e.g. `192.168.0.0/24`",
+      "lineNumber": 8,
+      "iacDescription": {
+        "issue": "Cloud SQL database instance allows public access",
+        "impact": "Potentially anyone can establish network connectivity to the database instance",
+        "resolve": "Set `settings.ip_configuration.authorized_networks` attribute to specific value e.g. `192.168.0.0/24`"
+      },
+      "publicId": "SNYK-CC-TF-235",
+      "msg": "resource.google_sql_database_instance[master_instance].settings.ip_configuration.authorized_networks[0]",
+      "references": [
+        "CIS Google Cloud Platform Foundation v1.1.0 - 6.5 Ensure that Cloud SQL database instances are not open to the world",
+        "https://cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://cloud.google.com/sql/docs/mysql/configure-private-ip"
+      ],
+      "path": [
+        "resource",
+        "google_sql_database_instance[master_instance]",
+        "settings",
+        "ip_configuration",
+        "authorized_networks[0]"
+      ],
+      "compliance": []
+    }
+  ]
+}

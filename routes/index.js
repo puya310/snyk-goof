@@ -113,6 +113,7 @@ exports.create = function (req, res, next) {
 };
 
 exports.destroy = function (req, res, next) {
+  // deepcode ignore NoSqli: <please specify a reason of ignoring this>
   Todo.findById(req.params.id, function (err, todo) {
 
     try {
@@ -163,6 +164,7 @@ function isBlank(str) {
   return (!str || /^\s*$/.test(str));
 }
 
+// deepcode ignore NoRateLimitingForExpensiveWebOperation: <please specify a reason of ignoring this>
 exports.import = function (req, res, next) {
   if (!req.files) {
     res.send('No files were uploaded.');

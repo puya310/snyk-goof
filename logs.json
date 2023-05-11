@@ -1,0 +1,99 @@
+{
+	"id": "AQAAAYbr16F-sPoYdQAAAABBWWJyMTZnRkFBQndPc3JXVEQzRF9RQ1A",
+	"content": {
+		"timestamp": "2023-03-16T19:13:42.782Z",
+		"tags": [
+			"env:prod16",
+			"source:polaris-vector-logging"
+		],
+		"host": "code-pr-check-service-worker-b6b49ddcf-v9v7x",
+		"service": "code-pr-check-service-worker",
+		"message": "PR analysis failed",
+		"attributes": {
+			"kubernetes": {
+				"pod_namespace": "code",
+				"app_type": "inhouse",
+				"container_name": "code-pr-check-service-worker",
+				"pod_node_zone": "us-east1-b",
+				"pod_labels": {
+					"app_kubernetes_io_name": "code-pr-check-service-worker",
+					"app_kubernetes_io_instance": "code-pr-check-service",
+					"pod_template_hash": "b6b49ddcf",
+					"snyk_io_owner": "zenith"
+				},
+				"pod_owner": "ReplicaSet/code-pr-check-service-worker-b6b49ddcf",
+				"pod_node_region": "us-east1",
+				"container_image": "gcr.io/snyk-main/code-pr-check-service:2af432a43bda61018dd151a7bb505c9f0fbc148c",
+				"pod_name": "code-pr-check-service-worker-b6b49ddcf-v9v7x",
+				"pod_node_name": "gke-prod16-default-pool-v6-2f5c91f5-gdp5"
+			},
+			"languages": [
+				"java",
+				"javascript",
+				"python",
+				"csharp",
+				"php",
+				"ruby",
+				"go",
+				"xml",
+				"apex"
+			],
+			"level": "error",
+			"timing": {
+				"total": 92537,
+				"mergeBase": 2293,
+				"queue": 5
+			},
+			"prAnalysisId": "d02e79ff9cb6455c765f0351d6aada2c95ac9f39",
+			"pid": 1,
+			"oid": "dcd44b964fc585d826500857acfe6fa6a11c3d92",
+			"polaris": {
+				"owner": "zenith",
+				"cluster": "prod16",
+				"environment": "prod",
+				"instance": "prod16",
+				"deployment_group": "prod-mt-us",
+				"region": "us-east1",
+				"deployment_option": "multi-tenant"
+			},
+			"error": {
+				"stack": "Error: Could not get results for PR\n    at PrCheckProcessor.process (/home/node/dist/logic/pr_analysis_processor.js:133:19)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async /home/node/node_modules/bull/lib/p-timeout.js:69:17",
+				"code": 500,
+				"originalError": "Error: Analysis for base failed with code 500 and message Analysis failed: {\"status\":\"FAILED\",\"code\":500,\"errorMessage\":\"internal error\",\"error\":\"internal error\"}\n    at getResultsForCommit (/home/node/dist/logic/pr_analysis_processor.js:249:31)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async Promise.all (index 0)\n    at async PrCheckProcessor.getPrAnalysisResults (/home/node/dist/logic/pr_analysis_processor.js:258:42)\n    at async PrCheckProcessor.process (/home/node/dist/logic/pr_analysis_processor.js:126:46)\n    at async /home/node/node_modules/bull/lib/p-timeout.js:69:17",
+				"kind": "Error",
+				"name": "Error",
+				"message": "Could not get results for PR",
+				"type": "could-not-get-results-for-pr"
+			},
+			"actingOrgPublicId": "3d884cf7-537c-4f28-b2f0-2ed38092f60c",
+			"prRef": "14213",
+			"actingGroupPublicId": "9d558dce-a740-4f1a-a5a9-d26af29cfb79",
+			"retries": 1,
+			"hostname": "code-pr-check-service-worker-b6b49ddcf-v9v7x",
+			"baseOid": "f201ac59bcb5cb43e89bd2dc43ffaeaf0df991c1",
+			"requestId": "a1b9c5e7-55a5-4e46-88e4-2ecefc6c41ca",
+			"requestUrl": "/pr-analysis",
+			"service": "code-pr-check-service-worker",
+			"analysisContext": {
+				"org": {
+					"name": "truecar-default",
+					"publicId": "3d884cf7-537c-4f28-b2f0-2ed38092f60c"
+				},
+				"initiator": "GIT (private)",
+				"project": {
+					"name": "Software-Apps/abp-frontend",
+					"publicId": "b0e5e029-2c13-4ef0-9f03-30cdcf159631"
+				},
+				"flow": "PR Check",
+				"group": {
+					"publicId": "9d558dce-a740-4f1a-a5a9-d26af29cfb79"
+				}
+			},
+			"v": 0,
+			"name": "code-pr-check-service-queue-pr-analysis",
+			"time": "2023-03-16T19:13:42.782Z",
+			"gitUrl": "6a97158eaa23f58bded1faad16b05511:426f92637af3f418e1a6793725bbce9f:0ce7566ce339258154f6b63d3c26444c6d603cbaa68bc8f4ce8bd9f0946a472334ba56300e3e9e4363e72de64a36ab2f366770d8ee6c60d9e1cd8f9cb9d35bdb5f0ee5cd9039bbae0a3992d7226c6dbc998af24ab91bb6873b2c3610f8d7fb440b683ac70d8eae1647ee07f715060b",
+			"timestamp": 1678994022782
+		}
+	}
+}
