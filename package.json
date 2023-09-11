@@ -46,15 +46,7 @@
     "snyk2spdx": "^1.7.1",
     "st": "0.2.4",
     "stream-buffers": "^3.0.1",
-<<<<<<< HEAD
     "tap": "^5.7.0"
-=======
-    "tap": "^5.7.0",
-    "tinymce": "5.3.0",
-    "@snyk/nodejs-runtime-agent": "^1.31.0",
-    "snyk": "^1.290.2"
-    
->>>>>>> 2fb92ecc0157b5d87debc0eda5cdf706ac833450
   },
   "devDependencies": {
     "browserify": "^13.1.1"
