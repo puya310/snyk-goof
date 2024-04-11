@@ -7,25 +7,35 @@ ignore:
         reason: example ignore via .snyk file
         expires: 2024-10-07T00:00:00.000Z
         created: 2022-09-30T15:11:42.190Z
-
-  npm:brace-expansion:20170302:
+  SNYK-JS-UGLIFYJS-1727251:
+    - '*':
+        reason: hello!
+        expires: 2025-10-07T00:00:00.000Z 
+  'npm:brace-expansion:20170302':
     - '*':
         reason: why not
         expires: 2025-10-07T00:00:00.000Z
-  
   SNYK-JS-Y18N-1021887:
-    - Users/puyarajabian/Documents/apps/snyk-goof/*:
+    - '*':
         reason: why not1
         expires: 2025-10-07T00:00:00.000Z
 
+  'NPM:MARKED:20180225':
+    - '*':
+        reason: why not1222
+        expires: 2024-10-07T00:00:00.000Z
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:http-signature:20150122':
     - tap > codecov.io > request > http-signature:
         patched: '2020-02-07T14:30:00.093Z'
-
 exclude:
- global:
-  - test1/**  #anything under the test1 directory 
-  - "**/*test2*"     #any directory with 'test2' in it
-  - "**/*test3.java" #any file that ends in test3.java
+  global:
+    - test1/**
+    - '**/*routes*'
+    - '**/*test3.java'
+    - node_modules
+    - testfolder/**
+    - '**/*db.js'
+    - subdir1/**
+    - '**/*creds.js'
