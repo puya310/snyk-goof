@@ -39,3 +39,4 @@ exclude:
     - '**/*db.js'
     - subdir1/**
     - '**/*creds1.js'
+    - 'creds1.js'
